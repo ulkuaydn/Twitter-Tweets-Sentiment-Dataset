@@ -36,10 +36,10 @@ Bu proje, sosyal medya metinleri üzerinden anlam çıkarımı yaparak; duygu s�
 - Lemmatization ve küçük harfe çevirme
 - `clean_tweet` sütunu oluşturuldu
 
-📎 Eklenen Görseller:
-- `uzunluk dağılımı.png`
-- `en sık geçen kelimeler.png`
-- `kelime bulutu.png`
+ Eklenen Görseller:
+- ![uzunluk dağılımı](https://github.com/user-attachments/assets/6cb1e383-b18b-4640-962c-fd48226b2978)
+- ![en sık geçen kelimeler](https://github.com/user-attachments/assets/7ae3fe93-ac40-47d0-96cb-33eccc08292b)
+- ![duygu dağılımı](https://github.com/user-attachments/assets/1471b42d-7514-45fa-879a-33336881afca)
 
 ---
 
@@ -58,8 +58,9 @@ Bu proje, sosyal medya metinleri üzerinden anlam çıkarımı yaparak; duygu s�
 - Eğitim/test oranı: %80 / %20
 - Değerlendirme: `Confusion Matrix`, `Accuracy`, `Precision`, `Recall`, `F1-score`
 
-📎 Eklenen Görsel:
-- `confusion matrix.png`
+ Eklenen Görsel:
+- ![confusion matrix](https://github.com/user-attachments/assets/b4da9da5-d0ea-4766-8209-28335b3a2ff1)
+
 
 ---
 
@@ -70,8 +71,9 @@ Bu proje, sosyal medya metinleri üzerinden anlam çıkarımı yaparak; duygu s�
 - 5000 tweet üzerinde eğitim
 - pyLDAvis ile konu görselleştirmesi
 
-📎 Eklenen Görsel:
-- `konular arası mesafe haritası.png`
+ Eklenen Görsel:
+- ![konulara arası mesafe haritası](https://github.com/user-attachments/assets/7103c597-7a3f-4452-ae8e-6c849c57c42e)
+
 
 ---
 
