@@ -47,7 +47,7 @@ Bu proje, sosyal medya metinleri üzerinden anlam çıkarımı yaparak; duygu s�
 
 - TF-IDF ve BoW kullanıldı
 - Kelime frekansları çıkarıldı
-- WordCloud ile görselleştirildi
+
 
 ---
 
