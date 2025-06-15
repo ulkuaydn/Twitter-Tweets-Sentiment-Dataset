@@ -1,129 +1,125 @@
-# Twitter Tweets Sentiment Dataset Projesi
+#  Twitter Duygu ve Konu Modelleme Analizi – Sentiment & Topic Mining
 
-Bu projede, **Kaggle** üzerinden temin edilen “Twitter Tweets Sentiment Dataset” kullanılarak **duygu analizi (Sentiment Analysis)** ve **konu modelleme (Topic Modeling)** yapılmıştır. Amaç, sosyal medya verilerinden anlamlı içgörüler elde ederek hem bireysel hem de kurumsal karar süreçlerine katkı sağlamaktır.
+ **Python ile Veri Bilimi** dersi kapsamında gerçekleştirilmiş bu projede, Twitter kullanıcılarının paylaştığı tweetler üzerinde duygu analizi ve konu modelleme yöntemleri uygulanmıştır.
 
----
-
-##  Proje Özeti
-
-Twitter, kullanıcıların düşüncelerini anlık olarak paylaştığı, kısa metin yapısına sahip bir sosyal medya platformudur. Bu proje kapsamında:
-
-- Tweet'ler metin ön işleme teknikleriyle temizlendi.
-- TF-IDF ve Bag of Words yöntemleri ile sayısallaştırma yapıldı.
-- Lojistik Regresyon ile duygu sınıflandırması gerçekleştirildi.
-- LDA (Latent Dirichlet Allocation) ile konu modelleme uygulandı.
+Bu proje, sosyal medya metinleri üzerinden anlam çıkarımı yaparak; duygu sınıflandırması, konu tespiti ve metin madenciliği tekniklerini bir araya getirmektedir.
 
 ---
 
-##  Veri Seti
+##  Proje Bileşenleri
 
-Veri seti [Kaggle](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset) platformundan alınmıştır ve şu sütunlardan oluşur:
-
-| Sütun Adı     | Açıklama                                      |
-|---------------|-----------------------------------------------|
-| `text`        | Tweet’in orijinal tam metni                   |
-| `selected_text` | Tweet’te duyguyu en çok yansıtan parça     |
-| `sentiment`   | Tweet’in duygu durumu (positive, negative, neutral) |
-
-###  Örnek Kayıtlar
-
-| text                         | selected_text     | sentiment |
-|------------------------------|-------------------|-----------|
-| I love this phone            | love              | positive  |
-| Worst service ever           | Worst service     | negative  |
-| Not sure about this product  | Not sure          | neutral   |
+###  Veri Seti: 
+- Kaynak: [Kaggle - Twitter Tweets Sentiment Dataset](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset)
+- İçerik: 27.000+ tweet, kullanıcı duygusu, orijinal ve özet metin
+- Sütunlar: `text`, `selected_text`, `sentiment`
 
 ---
 
-##  Veri Ön İşleme
+##  Kullanılan Araçlar ve Teknolojiler
 
-Ham veriler analiz öncesi şu işlemlerden geçirilmiştir:
-
-- Küçük harfe dönüştürme  
-- URL, mention ve hashtag temizliği  
-- Noktalama işaretleri ve sayıları kaldırma  
-- Stopword (gereksiz kelimeler) temizliği  
-- Boşluk düzenlemeleri  
-- `clean_tweet` adında yeni bir sütun oluşturuldu  
-
-### Örnek Temizleme:
-
-| Orijinal Tweet                            | Temizlenmiş Tweet         |
-|-------------------------------------------|----------------------------|
-| "I can't believe this happened!"          | cant believe happened      |
-| "@user I totally agree. #truth"           | totally agree              |
+| Alan                | Kullanılan Teknoloji   |
+|---------------------|------------------------|
+| Programlama Dili    | Python                 |
+| Görselleştirme      | Matplotlib, Seaborn, WordCloud |
+| Veri İşleme         | Pandas, NLTK, Gensim   |
+| Makine Öğrenmesi    | Scikit-learn, Logistic Regression |
+| Konu Modelleme      | Gensim LDA, pyLDAvis   |
+| NLP                 | TF-IDF, BoW, Lemmatization |
 
 ---
 
-##  Yöntem ve Uygulama
+##  Proje İçeriği
 
-### 1.  Duygu Analizi (Sentiment Analysis)
+### 1️ Veri Ön İşleme
 
-- `sentiment` sütunu 3 sınıfa dönüştürülmüştür:  
-  - 0 = Negative  
-  - 1 = Neutral  
-  - 2 = Positive
+- URL, mention, özel karakter ve stopword temizliği
+- Lemmatization ve küçük harfe çevirme
+- `clean_tweet` sütunu oluşturuldu
 
-- Metinler **TF-IDF** yöntemi ile sayısallaştırılmıştır.
-- **Logistic Regression** algoritması ile model eğitilmiştir.
-
-####  Model Performansı
-
-| Metrik      | Değer |
-|-------------|-------|
-| Accuracy    | 0.85  |
-| Precision   | 0.86  |
-| Recall      | 0.84  |
-| F1-Score    | 0.85  |
+📎 Eklenen Görseller:
+- `uzunluk dağılımı.png`
+- `en sık geçen kelimeler.png`
+- `kelime bulutu.png`
 
 ---
 
-### 2.  Konu Modelleme (Topic Modeling)
+### 2️ Vektörleştirme ve Görselleştirme
 
-- Temizlenmiş metinler `token` hâline getirilmiştir.
-- **gensim** ve **pyLDAvis** kütüphaneleri kullanılmıştır.
-- **LDA (Latent Dirichlet Allocation)** yöntemiyle 5 ana konu tespit edilmiştir.
-
-####  Örnek Konular
-
-- **Konu 1:** `battery, charge, power, life`  
-- **Konu 2:** `delivery, late, order, wait`  
-- **Konu 3:** `screen, display, resolution, brightness`
+- TF-IDF ve BoW kullanıldı
+- Kelime frekansları çıkarıldı
+- WordCloud ile görselleştirildi
 
 ---
 
-##  Sonuç ve Değerlendirme
+### 3️ Duygu Analizi (Sentiment Analysis)
 
-Bu çalışmayla birlikte:
+- Etiket: `sentiment` → 0 = Negatif, 1 = Nötr, 2 = Pozitif
+- Model: `LogisticRegression`
+- Eğitim/test oranı: %80 / %20
+- Değerlendirme: `Confusion Matrix`, `Accuracy`, `Precision`, `Recall`, `F1-score`
 
-- Tweet’ler üzerinden %85 doğrulukla duygu sınıflandırması yapılmıştır.
-- Kullanıcıların sıklıkla bahsettiği konular başarılı şekilde belirlenmiştir.
-
-### Uygulama Alanları:
-
--  **Marka algısı** takibi  
--  **Müşteri şikayeti** tespiti  
--  **Kriz yönetimi** ve hızlı aksiyon alma  
--  **Genelleştirilebilir ML modelleri** ile otomatik etiketleme  
+📎 Eklenen Görsel:
+- `confusion matrix.png`
 
 ---
 
-##  Kullanılan Araçlar ve Kütüphaneler
+### 4️ Konu Modelleme (Topic Modeling)
 
-- Python (pandas, numpy, sklearn, nltk, gensim, pyLDAvis)
-- Jupyter Notebook / Google Colab
-- Matplotlib & Seaborn (görselleştirme)
+- Algoritma: LDA (Latent Dirichlet Allocation)
+- Tokenizasyon: `nltk.word_tokenize`
+- 5000 tweet üzerinde eğitim
+- pyLDAvis ile konu görselleştirmesi
+
+📎 Eklenen Görsel:
+- `konular arası mesafe haritası.png`
 
 ---
 
-##  Not
+### 5️ Kural Tabanlı Etiketleme & Sınıflandırma
 
-Bu proje sadece bir başlangıçtır. Model performansı artırmak için:
+- Belirli anahtar kelimelere göre konular manuel belirlendi
+- Bu etiketler ile ikinci bir sınıflandırma modeli kuruldu
+- Artık kurala gerek kalmadan model tahmin yapabiliyor
 
-- Derin öğrenme tabanlı modeller (BERT, RoBERTa)
-- Veri artırma (data augmentation)
-- Daha büyük veri setleri denenebilir.
+---
 
+##  Model Performansı
 
+| Metrik         | Değer       |
+|----------------|-------------|
+| Doğruluk       | %85+        |
+| Precision      | Yüksek      |
+| Recall         | Dengeli     |
+| F1-Score       | Tatmin edici |
 
- 
+> Detaylar için: `classification_report` ve `confusion_matrix` kullanıldı.
+
+---
+
+##  Sonuç ve Yorumlar
+
+- Twitter verisi üzerinde uygulanan duygu ve konu modelleme başarılı sonuçlar verdi.
+- LDA ile öne çıkan temalar analiz edildi.
+- Duygu sınıflandırması, işletmelere sosyal medya analizinde yardımcı olabilir.
+- Bu tür analizler, kriz yönetimi, pazarlama stratejileri ve müşteri desteği açısından önemlidir.
+
+---
+
+##  Kaynakça
+
+- [Kaggle Dataset](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset)
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
+- [NLTK Documentation](https://www.nltk.org/)
+- [Gensim LDA](https://radimrehurek.com/gensim/)
+- [pyLDAvis Docs](https://pyldavis.readthedocs.io/)
+
+---
+
+## 👨‍💻 Geliştirici
+
+**Ülkü AYDIN**  
+YBS Öğrencisi  
+Proje: Python ile Veri Bilimi  
+
+---
+
