@@ -1,4 +1,4 @@
-#  Twitter Duygu ve Konu Modelleme Analizi – Sentiment & Topic Mining
+#  Twitter Duygu ve Konu Modelleme Analizi 
 
  **Python ile Veri Bilimi** dersi kapsamında gerçekleştirilmiş bu projede, Twitter kullanıcılarının paylaştığı tweetler üzerinde duygu analizi ve konu modelleme yöntemleri uygulanmıştır.
 
