@@ -17,7 +17,7 @@ Twitter, kullanıcıların düşüncelerini anlık olarak paylaştığı, kısa 
 
 ## 📁 Veri Seti
 
-Veri seti [Kaggle](https://www.kaggle.com/competitions/tweet-sentiment-extraction/data) platformundan alınmıştır ve şu sütunlardan oluşur:
+Veri seti [Kaggle](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset) platformundan alınmıştır ve şu sütunlardan oluşur:
 
 | Sütun Adı     | Açıklama                                      |
 |---------------|-----------------------------------------------|
