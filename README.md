@@ -1,4 +1,4 @@
-# 📊 Twitter Duygu Analizi ve Konu Modelleme Projesi
+# Twitter Tweets Sentiment Dataset Projesi
 
 Bu projede, **Kaggle** üzerinden temin edilen “Twitter Tweets Sentiment Dataset” kullanılarak **duygu analizi (Sentiment Analysis)** ve **konu modelleme (Topic Modeling)** yapılmıştır. Amaç, sosyal medya verilerinden anlamlı içgörüler elde ederek hem bireysel hem de kurumsal karar süreçlerine katkı sağlamaktır.
 
