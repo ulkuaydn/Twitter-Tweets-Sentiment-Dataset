@@ -4,7 +4,7 @@ Bu projede, **Kaggle** üzerinden temin edilen “Twitter Tweets Sentiment Datas
 
 ---
 
-## 🔍 Proje Özeti
+##  Proje Özeti
 
 Twitter, kullanıcıların düşüncelerini anlık olarak paylaştığı, kısa metin yapısına sahip bir sosyal medya platformudur. Bu proje kapsamında:
 
@@ -15,7 +15,7 @@ Twitter, kullanıcıların düşüncelerini anlık olarak paylaştığı, kısa 
 
 ---
 
-## 📁 Veri Seti
+##  Veri Seti
 
 Veri seti [Kaggle](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentiment-dataset) platformundan alınmıştır ve şu sütunlardan oluşur:
 
@@ -25,7 +25,7 @@ Veri seti [Kaggle](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentim
 | `selected_text` | Tweet’te duyguyu en çok yansıtan parça     |
 | `sentiment`   | Tweet’in duygu durumu (positive, negative, neutral) |
 
-### 🧾 Örnek Kayıtlar
+###  Örnek Kayıtlar
 
 | text                         | selected_text     | sentiment |
 |------------------------------|-------------------|-----------|
@@ -35,7 +35,7 @@ Veri seti [Kaggle](https://www.kaggle.com/datasets/yasserh/twitter-tweets-sentim
 
 ---
 
-## 🧼 Veri Ön İşleme
+##  Veri Ön İşleme
 
 Ham veriler analiz öncesi şu işlemlerden geçirilmiştir:
 
@@ -55,9 +55,9 @@ Ham veriler analiz öncesi şu işlemlerden geçirilmiştir:
 
 ---
 
-## 🧠 Yöntem ve Uygulama
+##  Yöntem ve Uygulama
 
-### 1. 📈 Duygu Analizi (Sentiment Analysis)
+### 1.  Duygu Analizi (Sentiment Analysis)
 
 - `sentiment` sütunu 3 sınıfa dönüştürülmüştür:  
   - 0 = Negative  
@@ -67,7 +67,7 @@ Ham veriler analiz öncesi şu işlemlerden geçirilmiştir:
 - Metinler **TF-IDF** yöntemi ile sayısallaştırılmıştır.
 - **Logistic Regression** algoritması ile model eğitilmiştir.
 
-#### ✅ Model Performansı
+####  Model Performansı
 
 | Metrik      | Değer |
 |-------------|-------|
@@ -78,13 +78,13 @@ Ham veriler analiz öncesi şu işlemlerden geçirilmiştir:
 
 ---
 
-### 2. 🗂️ Konu Modelleme (Topic Modeling)
+### 2.  Konu Modelleme (Topic Modeling)
 
 - Temizlenmiş metinler `token` hâline getirilmiştir.
 - **gensim** ve **pyLDAvis** kütüphaneleri kullanılmıştır.
 - **LDA (Latent Dirichlet Allocation)** yöntemiyle 5 ana konu tespit edilmiştir.
 
-#### 📌 Örnek Konular
+####  Örnek Konular
 
 - **Konu 1:** `battery, charge, power, life`  
 - **Konu 2:** `delivery, late, order, wait`  
@@ -92,7 +92,7 @@ Ham veriler analiz öncesi şu işlemlerden geçirilmiştir:
 
 ---
 
-## 🎯 Sonuç ve Değerlendirme
+##  Sonuç ve Değerlendirme
 
 Bu çalışmayla birlikte:
 
@@ -101,14 +101,14 @@ Bu çalışmayla birlikte:
 
 ### Uygulama Alanları:
 
-- 📣 **Marka algısı** takibi  
-- 🛠️ **Müşteri şikayeti** tespiti  
-- 🚨 **Kriz yönetimi** ve hızlı aksiyon alma  
-- 🤖 **Genelleştirilebilir ML modelleri** ile otomatik etiketleme  
+-  **Marka algısı** takibi  
+-  **Müşteri şikayeti** tespiti  
+-  **Kriz yönetimi** ve hızlı aksiyon alma  
+-  **Genelleştirilebilir ML modelleri** ile otomatik etiketleme  
 
 ---
 
-## ⚙️ Kullanılan Araçlar ve Kütüphaneler
+##  Kullanılan Araçlar ve Kütüphaneler
 
 - Python (pandas, numpy, sklearn, nltk, gensim, pyLDAvis)
 - Jupyter Notebook / Google Colab
@@ -116,7 +116,7 @@ Bu çalışmayla birlikte:
 
 ---
 
-## 📌 Not
+##  Not
 
 Bu proje sadece bir başlangıçtır. Model performansı artırmak için:
 
